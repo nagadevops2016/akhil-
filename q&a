@@ -1,0 +1,72 @@
+1. how many years of experince you have in kubernetes?
+around 1 year and i have some basic knowledge on kuberneties clusters.
+
+2. how to manage k8s cluster?
+ to manage k8s cluster it has 3 important components
+
+    1.The cluster
+At the highest level, Kubernetes is organised as a cluster of virtual or on-premises machines. These machines—called nodes—share compute, network and storage resources. Each cluster has one master node connected to one or more worker nodes. The worker nodes are responsible for running groups of containerised applications and workloads, known as pods and the master node manages which pods run on which worker nodes.
+
+    2.The control plane
+In order for the master node to communicate with the worker nodes—and for a person to communicate with the master node—Kubernetes includes a number of objects that collectively form the control plane.
+
+Developers and operators interact with the cluster primarily through the master node by using kubectl, a command-line interface that installs on their local OS. Commands issued to the cluster through kubectl are received by the kube-apiserver, the Kubernetes API that resides on the master node. The kube-apiserver then communicates requests to the kube-controller-manager in the master node, which is in turn responsible for handling worker node operations. Commands from the master node are received by the kubelet on the worker nodes.
+
+     3.Deploying apps and workloads
+The next step to getting started with Kubernetes is deploying apps and workloads. The master node maintains the current state of the Kubernetes cluster and configuration in the etcd, a key value store database, at all times. To run pods with your containerised apps and workloads, you will describe a new desired state to the cluster in the form of a YAML file. The kube-controller-manager takes the YAML file and tasks the kube-scheduler with deciding which worker nodes the app or workload should run based on predetermined constraints. Working in concert with each worker node’s kubelet, the kube-scheduler starts the pods, watches the state of the machines and is overall responsible for the resource management.
+
+
+3. what kind of monitoring tools we have for k8s?
+  for log management we can use ELK(elastic logstash kibana) stack, 
+  and cluster monitoring we have tools like prometheus and grafana, and i have very basic knowledge on them 
+
+
+4.in azure what services.
+  i have experince in azure service like azure Vm's, VM scale sets, storage services like blob storage, and in azure devops i have experince working with azure boards, repos, pipelines, release pipelines, and artifacts.
+   and very little knowledge on serverless services like azure web apps, function apps, and logic apps.
+
+5. linux vm to connect storage account 
+the actual steps would follow to connect a linux vm to storage account would be 
+Create a storage account
+Create a blob container in a storage account
+Grant the Linux VM's Managed Identity access to an Azure Storage container
+Get an access token and use it to call Azure Storage api using curl method , so that it would authenticate using the access token and establish connection to the storage account. 
+
+
+6. how to take backup of a vm.
+ there are various methods of taking azure vm backup, like within the vm we run cron jobs to take daily or weekly backups as needed, 
+
+ the standard procedure would be to a vm backup from the outside of the vm using azure portal, the steps would include, 
+ Sign in to the Azure portal.
+
+Select All services and in the Filter, type Virtual machines, and then select Virtual machines.
+
+From the list of VMs, select the VM you want to back up.
+
+On the VM menu, select Backup.
+
+In Recovery Services vault, do the following:
+
+If you already have a vault, select Select existing, and select a vault.
+
+If you don't have a vault, select Create new. Specify a name for the vault. It's created in the same region and resource group as the VM. You can't modify these settings when you enable backup directly from the VM settings.
+
+In Choose backup policy, do one of the following:
+
+Leave the default policy. This backs up the VM once a day at the time specified, and retains backups in the vault for 30 days.
+
+Select an existing backup policy if you have one.
+
+Create a new policy, and define the policy settings.
+
+Select Enable Backup. This associates the backup policy with the VM.
+
+After enabling backup, an initial backup runs. You can start the initial backup immediately, or wait until it starts in accordance with the backup schedule.
+
+Until the initial backup completes, the Last backup status shows as Warning (Initial backup pending).
+To see when the next scheduled backup will run, select the backup policy name.
+
+To run a backup immediately, in the VM menu, select Backup > Backup now.
+
+
+
